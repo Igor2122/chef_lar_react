@@ -11,18 +11,26 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
-        "axios": "^0.18",
+        "axios": "^0.18.0",
         "babel-preset-react": "^6.23.0",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^4.2.1",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
-        "sass-loader": "^7.1.0"
+        "sass-loader": "^7.1.0",
+        "react-redux": "^5.0.6",
+        "react-router-dom": "^4.2.2",
+        "reactstrap": "^5.0.0-alpha.3",
+        "redux": "^3.7.2",
+        "redux-form": "^7.1.1"
+    },
+    "dependencies": {
+        "react-router-dom": "^4.3.1",
+        "reactstrap": "^7.0.2"
     }
 }
