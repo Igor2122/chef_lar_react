@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    $recepies = DB::table('recepies')->get();
-    return $recepies;
+    // $recepies = DB::table('recepies')->get();
+    // return $recepies; - testing the connection 
 
-    // return view('root');
+    return view('root');
 });
 
 
