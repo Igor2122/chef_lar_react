@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $recepies = DB::table('recepies')->get();
+    return $recepies;
+
+    // return view('root');
 });
+
+
