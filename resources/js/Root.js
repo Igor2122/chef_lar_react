@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom'
-import Recepie from './containers/Recepies';
+import Home from './containers/Home';
 import About from './containers/About';
 import Navigation from './components/Navigation/Navigation';
 
@@ -14,8 +14,8 @@ export default class Root extends Component {
                     <div>
                         <Navigation />
                     </div>
-                    <Route path="/" exact component={Recepie}></Route>
-                    <About path="/about" exact component={About}></About>
+                    <Route path="/" exact component={Home}></Route>
+                    <Route path="/about"  component={About}></Route>
                 </div>
             </BrowserRouter>
         );
