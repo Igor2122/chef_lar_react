@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom'
-import Home from './containers/Home';
-import About from './containers/About';
+import Home from './containers/Home/Home';
+import About from './containers/About/About';
 import Navigation from './components/Navigation/Navigation';
 
 
