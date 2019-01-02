@@ -1,11 +1,11 @@
 import React,{ Component } from 'react';
-import classes from './About.css';
+import styles from './About.module.scss';
 
 class About extends Component {
     render (){
         return (
             <div>
-                <h1 className={classes.TextColor}>About us content will come here</h1>
+                <h1 className={styles.TextColor}>About us content will come here</h1>
             </div>
         );
     }

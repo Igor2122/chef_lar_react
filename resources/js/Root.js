@@ -11,9 +11,11 @@ export default class Root extends Component {
         return (
             <BrowserRouter>
                 <div>
+                    
                     <div>
                         <Navigation />
                     </div>
+
                     <Route path="/" exact component={Home}></Route>
                     <Route path="/about"  component={About}></Route>
                 </div>
