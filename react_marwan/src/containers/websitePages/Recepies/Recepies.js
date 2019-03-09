@@ -32,7 +32,8 @@ class RecepiesPage extends Component {
                             key={recepie.id}
                             title={recepie.title} 
                             image={recepie.image}
-                            directions={recepie.directions}
+                            shortDescr={recepie.short_description}
+                            updated={recepie.updated_at}
                             />
                           {/* </Col> */}
                       </>)

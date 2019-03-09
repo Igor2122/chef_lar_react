@@ -3,7 +3,8 @@ import {
   Card, CardBody,
   CardTitle,
   CardText,
-  CardImg
+  CardImg,
+  Button
 } from 'reactstrap';
 import classes from './Recep.css';
 
@@ -14,10 +15,11 @@ const Recepie = (props) => {
         <CardImg top width="75%" src={props.image} alt="Card image cap"/>
         <CardBody>
           <CardTitle>{props.title}</CardTitle>
-          <CardText>{props.directions}</CardText>
+          <CardText>{props.shortDescr}</CardText>
           <CardText>
-            <small className="text-muted">Last updated 3 mins ago</small>
+            <small className="text-muted">{props.updated}</small>
           </CardText>
+          <Button>See Details</Button>
         </CardBody>
       </Card>
     </div>
