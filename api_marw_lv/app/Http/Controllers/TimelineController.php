@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recepie;
 
 class TimelineController extends Controller
 {
@@ -13,7 +14,9 @@ class TimelineController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // dd(Recepie::all());
+        return Recepie::all();
+        // return view('home');
     }
 
     /**
