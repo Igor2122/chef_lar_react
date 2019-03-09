@@ -48,7 +48,7 @@ class TimelineController extends Controller
      */
     public function show($id)
     {
-        //
+        return Recepie::findOrFail($id);
     }
 
     /**
