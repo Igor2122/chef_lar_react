@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Card, CardBody,
-  //   Button,
   CardTitle,
   CardText,
   CardImg
@@ -12,7 +11,7 @@ const Recepie = (props) => {
   return (
     <div>
       <Card className={classes.Card}>
-        <CardImg top width="100%" src="/img/tram.jpeg" alt="Card image cap"/>
+        <CardImg top width="75%" src={props.image} alt="Card image cap"/>
         <CardBody>
           <CardTitle>{props.title}</CardTitle>
           <CardText>{props.directions}</CardText>

@@ -3,6 +3,7 @@ import Recepie from '../../../components/Recepie/Recep';
 import classes from './Recepies.css';
 import axios from 'axios';
 import Loader from '../../../components/UI/Spinner/Spinner';
+import { Container, Row, Col } from 'reactstrap';
 
 class RecepiesPage extends Component {
 
@@ -14,7 +15,6 @@ class RecepiesPage extends Component {
     axios
       .get('http://127.0.0.1:8000/api/recepies')
       .then(response => {
-        // console.log(response);
         this.setState({recepies: response.data})
         console.log(this.state.recepies)
       });
@@ -24,21 +24,29 @@ class RecepiesPage extends Component {
 
     let recepie = <Loader />;
      if(this.state.recepies){
-      recepie = this.state.recepies.map(res => {
-            console.log(res);
-            return  <div>
-                      <Recepie 
-                        title={res.title} 
-                        directions={res.directions}
-                        />
-                    </div>
-          })
+        recepie = this.state.recepies.map(recepie => {
+          // console.log(recepie.id);
+              return  (<>
+                        <Col md="4">
+                          <Recepie 
+                            key={recepie.id}
+                            title={recepie.title} 
+                            image={recepie.image}
+                            directions={recepie.directions}
+                            />
+                          </Col>
+                      </>)
+            })
      }
 
     return (
       <div className={classes.RecepiesDiv}>
         <h1>Suggested Recepies:</h1>
-        {recepie}
+        <Container>
+          <Row>
+              {recepie}
+          </Row>
+        </Container>
       </div>
     );
   }

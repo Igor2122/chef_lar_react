@@ -43,8 +43,7 @@ class Landing extends Component {
         </div>
         {nav}
         <Jumbotron/>
-        
-          <Recepies />
+        <Recepies />
       </div>
     );
   }
