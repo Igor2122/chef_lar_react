@@ -3,7 +3,7 @@ import Navigation from '../../Navigation/Navigation';
 import BackgroundSlider from '../../../components/imageSliders/backgroundSlider/backgroundSlider';
 import Jumbotron from '../../../components/UI/Jumbotron/Jumbotron';
 import classes from './LandingPage.css';
-import Recepies from '../Recepies/Recepies';
+import Recepies from '../../PromotedRecepies/PromotedRecepies';
 
 class Landing extends Component {
 

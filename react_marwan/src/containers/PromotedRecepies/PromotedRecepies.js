@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import Recepie from '../../../components/Recepie/Recep';
+import Recepie from '../../components/Recepie/Recep';
 import classes from './Recepies.css';
 import axios from 'axios';
-import Loader from '../../../components/UI/Spinner/Spinner';
-import { Container, Row, Col, CardDeck} from 'reactstrap';
+import Loader from '../../components/UI/Spinner/Spinner';
+import { Container, CardDeck} from 'reactstrap';
+
 
 class RecepiesPage extends Component {
 
@@ -26,17 +27,13 @@ class RecepiesPage extends Component {
      if(this.state.recepies){
         recepie = this.state.recepies.map(recepie => {
           // console.log(recepie.id);
-              return  (<>
-                        {/* <Col md="4"> */}
-                          <Recepie 
-                            key={recepie.id}
-                            title={recepie.title} 
-                            image={recepie.image}
-                            shortDescr={recepie.short_description}
-                            updated={recepie.updated_at}
-                            />
-                          {/* </Col> */}
-                      </>)
+              return  (<Recepie 
+                          key={recepie.id}
+                          title={recepie.title} 
+                          image={recepie.image}
+                          shortDescr={recepie.short_description}
+                          updated={recepie.updated_at}
+                          />)
             })
      }
 
@@ -54,3 +51,5 @@ class RecepiesPage extends Component {
 }
 
 export default RecepiesPage;
+
+
