@@ -1,0 +1,19 @@
+
+ /*****         GRID DECLARATION      *******/
+ .GalleryGrid {
+     margin: 2% 1%;
+     height: 80vh;
+     width: 100%;
+     /* width: 80%; */
+     margin: auto;
+     display: grid;
+     grid-gap: 10px;
+     grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+     grid-auto-rows: minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+     grid-template-areas: 
+     "DviOne DviOne DivFour DivFive DivSeven DivSeven" 
+     "DviOne DviOne DivSix DivSix DivSeven DivSeven" 
+     "DivTwo DivThree DivSix DivSix DivEigtht DivNine"
+ }
+ 
+ 

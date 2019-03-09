@@ -1,0 +1,88 @@
+
+@keyframes slide {
+    0% {scale: 0;  transform: translateX(0) scale(1.2)}
+    50% {scale: 1.1;  transform: translateX(20px) scale(1.1) }
+    100% { scale: 0; transform: translateX(0) scale(1.2)}
+  }
+
+@keyframes slideReverse {
+    0% {scale: 0;  transform: translateX(0) scale(1.2)}
+    50% {scale: 1.1;  transform: translateX(-20px) scale(1  ) }
+    100% { scale: 0; transform: translateX(0) scale(1.2)}
+  }
+
+.Animated {
+    position: absolute;
+    height: 180%;   
+    top: 0;
+    left: -40px;
+    animation-duration: 15s;
+    animation-name: slide;
+    animation-iteration-count: infinite;
+}
+
+.AnimatedReverse {
+  position: absolute;
+    height: 180%;   
+    top: 0;
+    left: -40px;
+    /* transform: translateX(-50%); */
+    /* transform: translateY(-30%); */
+    animation-duration: 15s;
+    animation-name: slideReverse;
+    animation-iteration-count: infinite;
+}
+
+.Likes {
+  position: absolute;
+  z-index: 99;
+}
+
+
+/* Grid elements Layout */
+
+.AllImages {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transfrom: scale(1.2);
+}
+
+
+.DviOne {
+    grid-area: DviOne;
+    background: red;
+  }
+  
+  .DivTwo {
+    grid-area: DivTwo;
+  }
+  
+  .DivThree {
+    grid-area: DivThree;
+  }
+  
+  .DivFour {
+    grid-area: DivFour;
+  }
+  
+  .DivFive {
+    grid-area: DivFive;
+  }
+  
+  .DivSix {
+    grid-area: DivSix;
+  }
+  
+  .DivSeven {
+    grid-area: DivSeven;
+  }
+  .DivEigtht {
+    grid-area: DivEigtht;
+  }
+  .DivNine {
+    grid-area: DivNine;
+    background: red;
+  }
+  
+  

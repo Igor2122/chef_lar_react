@@ -1,0 +1,21 @@
+
+
+.Home {
+   position: relative;
+   height: 100vh;
+   background: #211717;
+   overflow: hidden;
+}
+
+.BackgroundVideo {
+   /*height: 100%;*/
+   width: 100%;
+}
+
+.MainTagline {
+   position: absolute;
+   z-index: 3;
+   top: 45%;
+   left: 10%;
+}
+

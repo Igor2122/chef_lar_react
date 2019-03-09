@@ -1,0 +1,53 @@
+
+.InfoOverlay {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: #2A231C;
+    transition: all .3s ease;
+}
+
+.LikesCommets {
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+    display: flex;
+}
+
+.InstaLikes {
+    position: relative;
+    border-radius: 25%;
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e13584, #e3106c, #fd1d1d);
+    width: 4rem;
+    color: #fff;
+    font-size: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.InstaLikes div {
+    height: 100%;
+    width: 100%;
+}
+
+.InstaLikes h3 {
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+.TipDown {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -45%;
+    left: 3%;
+    background: transparent;
+    border: 10px solid #5851db;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;  
+}
+

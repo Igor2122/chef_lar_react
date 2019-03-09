@@ -1,0 +1,88 @@
+.Recepies {
+   height: 90%;
+   background: red;
+}
+
+
+/*****         GRID DECLARATION      *******/
+
+.GalleryGrid {
+    margin: 2% 1%;
+    height: 100vh;
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 10% minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+    grid-template-areas: 
+    "DivTop DivTop DivTop DivTop DivTop DivTop " 
+    "DviOne DviOne DivFour DivFive DivSeven DivSeven" 
+    "DviOne DviOne DivSix DivSix DivSeven DivSeven" 
+    "DivTwo DivThree DivSix DivSix DivEigtht DivNine"
+}
+
+.DivTop {
+    grid-area: DivTop;
+    text-align: center;
+}
+
+.DviOne {
+    grid-area: DviOne;
+    /*    background-color: red;*/
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DivTwo {
+    grid-area: DivTwo;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DivThree {
+    grid-area: DivThree;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DivFour {
+    grid-area: DivFour;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DivFive {
+    grid-area: DivFive;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DivSix {
+    grid-area: DivSix;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.DivSeven {
+    grid-area: DivSeven;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.DivEigtht {
+    grid-area: DivEigtht;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.DivNine {
+    grid-area: DivNine;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}

@@ -1,0 +1,12 @@
+.Navbar {
+   padding: 1% 0;
+   background: #F5F0E5;
+}
+
+
+/* all google fonts imported in root/fonts/fonts.css */
+.Navbar a {
+   color: #444C5E;
+   font-family: 'Raleway', sans-serif;
+   font-size: 1.625rem;
+}
