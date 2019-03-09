@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import Rcepie from '../../../components/Recepie/Recep';
+import Recepie from '../../../components/Recepie/Recep';
 import classes from './Recepies.css';
 import axios from 'axios';
-import Recepie from '../../../components/Recepie/Recep';
+import Loader from '../../../components/UI/Spinner/Spinner';
 
 class RecepiesPage extends Component {
 
@@ -14,22 +14,25 @@ class RecepiesPage extends Component {
     axios
       .get('http://127.0.0.1:8000/api/recepies')
       .then(response => {
-        console.log(response);
+        // console.log(response);
         this.setState({recepies: response.data})
+        console.log(this.state.recepies)
       });
   }
 
   render() {
 
-       let recepie = null;
+    let recepie = <Loader />;
      if(this.state.recepies){
-          let all = Object.keys(this.state.recepies);
-          console.log(all);
-          // Object.values(this.state.recepies)
-          // .map(rec => {
-          //      console.log(rec)
-          //      recepie = <Recepie name={rec.name} />
-          // })
+      recepie = this.state.recepies.map(res => {
+            console.log(res);
+            return  <div>
+                      <Recepie 
+                        title={res.title} 
+                        directions={res.directions}
+                        />
+                    </div>
+          })
      }
 
     return (

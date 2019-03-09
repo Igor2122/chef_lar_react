@@ -14,9 +14,8 @@ const Recepie = (props) => {
       <Card className={classes.Card}>
         <CardImg top width="100%" src="/img/tram.jpeg" alt="Card image cap"/>
         <CardBody>
-          <CardTitle>{props.name}</CardTitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.</CardText>
+          <CardTitle>{props.title}</CardTitle>
+          <CardText>{props.directions}</CardText>
           <CardText>
             <small className="text-muted">Last updated 3 mins ago</small>
           </CardText>
