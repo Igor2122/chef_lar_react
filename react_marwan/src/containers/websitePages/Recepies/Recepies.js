@@ -12,7 +12,7 @@ class RecepiesPage extends Component {
 
   componentDidMount() {
     axios
-      .get('https://marwannew-c69d8.firebaseio.com/recipes.json')
+      .get('http://127.0.0.1:8000/api/recepies')
       .then(response => {
         console.log(response);
         this.setState({recepies: response.data})
