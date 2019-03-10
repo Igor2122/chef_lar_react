@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import AddRecepieForm from '../../../../components/UI/Input/forms/AddRecepieForm/AddRecepieForm';
 import {Container, Form} from 'reactstrap';
 // eslint-disable-next-line
-import axios from '../../../../axios-recep-conn';
+// import axios from '../../../../axios-recep-conn';
 
 class AddRecepies extends Component {
 
@@ -50,6 +50,7 @@ class AddRecepies extends Component {
 
   inputChangedHandler = (e, inputIndentifier) => {
     console.log(e.target.value );
+    // eslint-disable-next-line
     const updatedOrderForm = {
       ...this.state.updatedOrderForm
     }
@@ -85,6 +86,7 @@ class AddRecepies extends Component {
               inputtype={formElement.configuration.inputtype}
               type={formElement.configuration.type}
               changed={this.inputChangedHandler}
+              // eslint-disable-next-line
               inputtype={formElement.configuration.inputtype}
               />
             ))}

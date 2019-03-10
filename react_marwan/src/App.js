@@ -11,7 +11,9 @@ import { Row, Col } from 'reactstrap';
 // import { DB_CONFIG }from './config/config';
 // import firebase from 'firebase/app'
 import AdminPage from './containers/websitePages/Admin/Admin';
+// eslint-disable-next-line
 import AddRecepies from './containers/websitePages/Admin/AddRecepie/AddRecepie';
+import RecepieSingle from './containers/PromotedRecepies/PromotedRecepies';
 
 
 // <Route path="/" exact component={Home}></Route>
@@ -21,13 +23,7 @@ class App extends Component {
   constructor(props){
     super(props);
 
-    // this.app = firebase.initializeApp({DB_CONFIG});
-    // this.db = this.app.database().ref().child('recepies');
-
-    // console.log(firebase.name);
-    // console.log(firebase.database());
-
-    this.satae = {
+    this.state = {
       recepies : []
     }
   }
@@ -42,8 +38,8 @@ class App extends Component {
                   <Route path="/about" exact component={About}></Route>
                   {/* <Route path="/recepies" exact component={RecepiesDiv}></Route> */}
                   <Route path="/admin" exact component={AdminPage}></Route>
-
-                  <Route path="/admin/all_recepies" component={AddRecepies}/>
+                  <Route path="/recepies/sample" exact component={RecepieSingle}/>
+                  
                 </Col>
               </Row>
             

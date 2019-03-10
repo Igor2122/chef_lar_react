@@ -13,12 +13,14 @@ class RecepiesPage extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     axios
       .get('http://127.0.0.1:8000/api/recepies')
       .then(response => {
         this.setState({recepies: response.data})
         console.log(this.state.recepies)
-      });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {

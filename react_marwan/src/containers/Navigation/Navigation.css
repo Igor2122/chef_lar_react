@@ -10,3 +10,9 @@
    font-family: 'Raleway', sans-serif;
    font-size: 1.625rem;
 }
+
+.Navbar li:active,
+.Navbar li.active {
+   color: red!important;
+}
+
