@@ -1,4 +1,11 @@
 .Card {
    width: 18rem;
    height: 100%;
+   background: #e6e6e1;
+   
 }
+
+.Title {
+   color: #999590;
+}
+

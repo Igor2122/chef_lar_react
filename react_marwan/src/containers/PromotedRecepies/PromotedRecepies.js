@@ -28,16 +28,18 @@ class RecepiesPage extends Component {
     let recepie = <Loader />;
      if(this.state.recepies){
         recepie = this.state.recepies.map(recepie => {
-          // console.log(recepie.id);
-              return  (<Recepie 
+          if(recepie.promoted){
+            return  (<Recepie 
                           key={recepie.id}
                           title={recepie.title} 
                           image={recepie.image}
                           shortDescr={recepie.short_description}
                           updated={recepie.updated_at}
+                          id = {recepie.id}
                           />)
+          }
             })
-     }
+          }
 
     return (
       <div className={classes.RecepiesDiv}>

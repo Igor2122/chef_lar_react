@@ -18,12 +18,12 @@ const Recepie = (props) => {
       <Card className={classes.Card}>
         <CardImg top width="75%" src={props.image} alt="Card image cap"/>
         <CardBody>
-          <CardTitle>{props.title}</CardTitle>
+          <CardTitle className={classes.Title}>{props.title}</CardTitle>
           <CardText>{props.shortDescr}</CardText>
           <CardText>
             <small className="text-muted">{props.updated}</small>
           </CardText>
-          <Button><Link to="/recepies/sample"> See Details</Link></Button>
+          <Button><Link to={"/recepies/" + props.id}>See Details</Link></Button>
         </CardBody>
       </Card>
     </div>

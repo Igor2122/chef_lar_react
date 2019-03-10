@@ -13,11 +13,9 @@ import { Row, Col } from 'reactstrap';
 import AdminPage from './containers/websitePages/Admin/Admin';
 // eslint-disable-next-line
 import AddRecepies from './containers/websitePages/Admin/AddRecepie/AddRecepie';
-import RecepieSingle from './containers/PromotedRecepies/PromotedRecepies';
+import RecepiesPage from './containers/websitePages/RecepiesAll/RecepiesAllView';
 
 
-// <Route path="/" exact component={Home}></Route>
-// <Route path="/recepies" exact component={Recepies}></Route>
 class App extends Component {
 
   constructor(props){
@@ -38,7 +36,7 @@ class App extends Component {
                   <Route path="/about" exact component={About}></Route>
                   {/* <Route path="/recepies" exact component={RecepiesDiv}></Route> */}
                   <Route path="/admin" exact component={AdminPage}></Route>
-                  <Route path="/recepies/sample" exact component={RecepieSingle}/>
+                  <Route path="/recepies/:id" exact component={RecepiesPage}/>
                   
                 </Col>
               </Row>
