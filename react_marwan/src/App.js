@@ -30,10 +30,10 @@ class App extends Component {
           <div className={classes.Component}>
             <Route path="/" exact component={LandingPage}></Route>
             <Route path="/about" exact component={About}></Route>
-            {/* <Route path="/recepies" exact component={RecepiesDiv}></Route> */}
             <Route path="/admin" exact component={AdminPage}></Route>
             <Route path="/recepies/" exact component={RecepiesPage}/>
             <Route path="/recepies/:id" exact component={RecepiesPage}/>
+            <Route path="/admin/new_post" component={AddRecepies}/> 
           </div>
         </BrowserRouter>
         );

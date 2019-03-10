@@ -15,6 +15,8 @@ class CreateIngridientCategoriesTable extends Migration
     {
         Schema::create('ingridient_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('ingr_categ_name', 100);
+            $table->integer('parent_id')->nullable();
             $table->timestamps();
         });
     }

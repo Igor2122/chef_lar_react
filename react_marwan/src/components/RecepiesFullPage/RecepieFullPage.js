@@ -8,10 +8,11 @@ const recepies = (props) => {
 
     const ingredients = props.ingredients.split(',');
     ingredients.pop();
+    console.log(ingredients)
+    
     let li = '';
     li = ingredients.map((element, i) => {
         return (
-            
             <li key={i}>{element}</li>
         )
     }
@@ -25,6 +26,7 @@ const recepies = (props) => {
             <Row>
                 <Col md="6">
                     <ul>
+                        {/* list of ingredients */}
                         {li}
                     </ul>
                 </Col>

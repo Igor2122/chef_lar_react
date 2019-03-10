@@ -1,120 +1,69 @@
 import React, {Component} from 'react'
 import AddRecepieForm from '../../../../components/UI/Input/forms/AddRecepieForm/AddRecepieForm';
-import {Container, Form} from 'reactstrap';
-// eslint-disable-next-line
-// import axios from '../../../../axios-recep-conn';
+import {Container, Row, Col} from 'reactstrap';
+
 
 class AddRecepies extends Component {
 
   state = {
-    name: null,
-    cagegory: null,
-    // instructions: null,
-    addRecepieForm: {
-      recepName: {
-        configuration: {
-          label: 'Recepie Name',
-          inputtype: 'input',
-          type: 'input',
-          id: 'RecepieName',
-          placeholder: 'Recepie Name',
-          name: 'Recepie Name'
-        },
-        value: '',
-      },
-      SelectCategory: {
-        configuration: {
-          label: 'Select Category',
-          inputtype: 'select',
-          type: 'select',
-          id: 'SelectCategory',
-          placeholder: 'Select Category',
-          name: 'SelectCategory'
-        },
-        value: '',
-      },
-      Instructions: {
-        configuration: {
-          label: 'Instructions',
-          inputtype: 'text-area',
-          type: 'textarea',
-          id: 'Inscructions',
-          placeholder: 'Insctruction shall come here',
-          name: 'Inscructions'
-        },
-        value: '',
-      },
-      
+    formData: {
+      title: null,
+      short_description: null,
+      image: null,
+      directions: null,
+      ingredients: null,
+      category: null,
+      level: null,
+    }, 
+    fromSettings: {
+      title: 'text',
+      short_description: 'text',
+      image: 'text',
+      directions: 'textarea',
+      ingredients: 'textarea',
+      category: 'select',
+      level: 'select',
     }
   }
 
-  inputChangedHandler = (e, inputIndentifier) => {
-    console.log(e.target.value );
-    // eslint-disable-next-line
-    const updatedOrderForm = {
-      ...this.state.updatedOrderForm
-    }
-
-  }
-
-  addRecepiesHandler = (e) => {
+  getInputValues = e => {
     e.preventDefault();
-    // console.log(this.state);
+    console.log('clicked');
   }
+  
+  handleChange = e => {
+    console.log(e.target.name)
+    switch (e.target.name) {
+      case 'recepie_name':
+          this.setState({name: e.target.value});
+        break;
+      case 'directions':
+          this.setState({name: e.target.value});
+        break;
+
+      default:
+        break;
+    }
+    console.log(this.state);
+  }
+
+  
 
   render() {
-    
-    
-    // const formIds = Object.keys(this.state.addRecepieForm)
-    const formElements = Object.values(this.state.addRecepieForm);
-
-
-    console.log(formElements);
+  
 
     
     return (
-      <div>
-
-        <Form onSubmit={this.addRecepiesHandler}>
-    
-          <Container className="mt-5">
-            <h1>Add New Recepies:</h1>
-            {formElements.map((formElement, i) => (
-              <AddRecepieForm 
-              key={i}
-              label={formElement.configuration.label}
-              inputtype={formElement.configuration.inputtype}
-              type={formElement.configuration.type}
-              changed={this.inputChangedHandler}
-              // eslint-disable-next-line
-              inputtype={formElement.configuration.inputtype}
-              />
-            ))}
-            {/* <AddRecepieForm
-              label={'Recepie Name'}
-              inputtype={'input'}
-              type={'input'}
-              id={'RecepieName'}
-              placeholder={'Recepie Name'}
-              name={'RecepieName'}/>
-            <AddRecepieForm
-              label={'Select Category'}
-              inputtype={'select'}
-              type={'select'}
-              id={'SelectCategory'}
-              placeholder={'Recepie Name'}
-              name={'SelectCategory'}/>
-            <AddRecepieForm
-              label={'Instructions'}
-              inputtype={'text-area'}
-              type={'textarea'}
-              id={'SelectCategory'}
-              placeholder={'Recepie Name'}
-              name={'Recepie Insctructions'}/> */}
-            <input type="submit" value="Submit"/>
-          </Container>
-        </Form>
-      </div>
+      <Container>
+      <Row>
+        <Col md="4">
+          <h1>Add Recipe Form</h1>
+        </Col>
+        <Col md="8">
+          <AddRecepieForm />
+        </Col>
+      </Row>
+      </Container>
     );
   }
 }

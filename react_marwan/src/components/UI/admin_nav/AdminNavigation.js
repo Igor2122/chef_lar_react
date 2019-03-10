@@ -13,7 +13,7 @@ export default class Example extends React.Component {
           
           <li>
             <Link to={{
-              pathname: '/admin/all_recepies'
+              pathname: '/admin/new_post'
             }}>Add Recepie</Link>
           </li>
         </ul>

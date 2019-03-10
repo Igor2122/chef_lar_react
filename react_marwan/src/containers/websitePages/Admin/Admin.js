@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Navigaton from '../../Navigation/Navigation';
+import Navigation from '../../Navigation/Navigation';
 // eslint-disable-next-line
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Container, Row, Col} from 'reactstrap';
@@ -12,9 +12,10 @@ class AdminPage extends Component {
     let spacer = {
       height: '200px'
     }
+    
     return (
       <div>
-        <Navigaton/>
+        <Navigation/>
         <Container>
           <Row>
             <Col xs='3'>
@@ -22,7 +23,7 @@ class AdminPage extends Component {
               <AdminNavigation/>
             </Col>
             <Col xs='9'>
-              <Route path="/admin/new_post" component={AddRecepies}/> {/* <Route path="/admin/all_recepies" component={AddRecepies}/> */}
+              
             </Col>
           </Row>
         </Container>
@@ -30,5 +31,6 @@ class AdminPage extends Component {
     );
   }
 }
+
 
 export default AdminPage;
