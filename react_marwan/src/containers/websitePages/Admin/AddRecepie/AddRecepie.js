@@ -16,7 +16,11 @@ class AddRecepies extends Component {
       level: null,
     }, 
     fromSettings: {
-      title: 'text',
+      recep_name: {
+        type: 'text',
+        name: 'title',
+        placeholder: 'Enter Your Recepie Name'
+      },
       short_description: 'text',
       image: 'text',
       directions: 'textarea',
@@ -34,7 +38,7 @@ class AddRecepies extends Component {
   handleChange = e => {
     console.log(e.target.name)
     switch (e.target.name) {
-      case 'recepie_name':
+      case 'title':
           this.setState({name: e.target.value});
         break;
       case 'directions':
@@ -51,7 +55,7 @@ class AddRecepies extends Component {
 
   render() {
   
-
+    
     
     return (
       <Container>
@@ -60,7 +64,10 @@ class AddRecepies extends Component {
           <h1>Add Recipe Form</h1>
         </Col>
         <Col md="8">
-          <AddRecepieForm />
+          <AddRecepieForm type={this.state.fromSettings.recep_name.type} 
+          name = {this.state.fromSettings.recep_name.name}placeholder = {this.state.fromSettings.recep_name.placeholder}
+            func={this.handleChange}
+          />
         </Col>
       </Row>
       </Container>

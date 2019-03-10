@@ -8,16 +8,16 @@ class FormElement extends Component {
   constructor(props) {
     super(props);
     
-    // this.handleClick = this.handleClick.bind(this);
+    
   }
-   generateFrom = (type) => {
+   generateFrom = (type, name, placeholderValue, func) => {
      console.log(this.props);
      let form = null;
       switch (type) {
         case 'text':
         form = (<FormGroup>
-          <Label for="recep_name">Recepie Name</Label>
-            <Input onChange={this.handleChange} type="text" name="recepie_name" placeholder="Enter Recepie Name" />
+          <Label for={name}>Recepie Name</Label>
+            <Input onChange={func} type={type} name={name} placeholder={placeholderValue} />
         </FormGroup>)
         return form;
         break;
@@ -28,11 +28,10 @@ class FormElement extends Component {
   }
 
   render() {
-    let output = this.generateFrom('text');
+    let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func);
     return (
       <FormGroup>
       <p>hello</p>
-        {output}
         {output}
     </FormGroup>
     );
