@@ -10,13 +10,13 @@ class FormElement extends Component {
     
     
   }
-   generateFrom = (type, name, placeholderValue, func) => {
-     console.log(this.props);
+   generateFrom = (type, name, placeholderValue, func, label) => {
+    //  console.log(this.props);
      let form = null;
       switch (type) {
         case 'text':
         form = (<FormGroup>
-          <Label for={name}>Recepie Name</Label>
+          <Label for={name}>{label}</Label>
             <Input onChange={func} type={type} name={name} placeholder={placeholderValue} />
         </FormGroup>)
         return form;
@@ -28,7 +28,7 @@ class FormElement extends Component {
   }
 
   render() {
-    let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func);
+    let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func, this.props.label);
     return (
       <FormGroup>
       <p>hello</p>

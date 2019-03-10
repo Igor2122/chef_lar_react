@@ -15,19 +15,29 @@ class AddRecepies extends Component {
       category: null,
       level: null,
     }, 
-    fromSettings: {
-      recep_name: {
-        type: 'text',
-        name: 'title',
-        placeholder: 'Enter Your Recepie Name'
+    fromSettings: [
+      {
+        recep_name: {
+          label: 'Recepie Name',
+          type: 'text',
+          name: 'title',
+          placeholder: 'Enter Your Recepie Name'
+        },
       },
-      short_description: 'text',
+      {
+        recep_name : {
+        label: 'Short Description',
+        type: 'text',
+        name: 'short_description',
+        placeholder: 'Recepie Short Description'
+      }
+     },
+    ],
       image: 'text',
       directions: 'textarea',
       ingredients: 'textarea',
       category: 'select',
       level: 'select',
-    }
   }
 
   getInputValues = e => {
@@ -39,10 +49,10 @@ class AddRecepies extends Component {
     console.log(e.target.name)
     switch (e.target.name) {
       case 'title':
-          this.setState({name: e.target.value});
+          this.setState({formData: {...this.state.formData, title: e.target.value}});
         break;
-      case 'directions':
-          this.setState({name: e.target.value});
+      case 'short_description':
+          this.setState({short_description: e.target.value});
         break;
 
       default:
@@ -56,7 +66,17 @@ class AddRecepies extends Component {
   render() {
   
     
-    
+    // console.log(this.state.fromSettings);
+    let form = null
+    form = this.state.fromSettings.map(res => {
+       return (<AddRecepieForm 
+                          type={res.recep_name.type} 
+                          name = {res.recep_name.name}
+                          placeholder = {res.recep_name.placeholder}
+                          label={res.recep_name.label}
+                          func={this.handleChange}
+                    />)
+    });
     return (
       <Container>
       <Row>
@@ -64,10 +84,7 @@ class AddRecepies extends Component {
           <h1>Add Recipe Form</h1>
         </Col>
         <Col md="8">
-          <AddRecepieForm type={this.state.fromSettings.recep_name.type} 
-          name = {this.state.fromSettings.recep_name.name}placeholder = {this.state.fromSettings.recep_name.placeholder}
-            func={this.handleChange}
-          />
+          {form}
         </Col>
       </Row>
       </Container>
