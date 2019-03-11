@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-use App\Recepies;
+use App\Recepie;
 
 class TestController extends Controller
 {
@@ -36,7 +36,8 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        
     }
 
     /**

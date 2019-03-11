@@ -37,7 +37,17 @@ class TimelineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // dd($request);
+       $recepie = new Recepie;
+       $recepie->title = $request->title;
+       $recepie->short_description = $request->short_description;
+       $recepie->categrory_id = $request->category;
+       $recepie->image = $request->image;
+       $recepie->directions = $request->directions;
+       $recepie->ingredients = $request->ingredients;
+       $recepie->level = $request->level;
+       $recepie->save();
+
     }
 
     /**

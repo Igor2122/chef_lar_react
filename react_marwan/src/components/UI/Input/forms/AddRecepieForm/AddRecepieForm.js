@@ -5,22 +5,19 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class FormElement extends Component {
 
-  constructor(props) {
-    super(props);
-    
-    
-  }
+  
    generateFrom = (type, name, placeholderValue, func, label) => {
-    //  console.log(this.props);
+     console.log(this.props);
      let form = null;
       switch (type) {
         case 'text':
         form = (<FormGroup>
-          <Label for={name}>{label}</Label>
-            <Input onChange={func} type={type} name={name} placeholder={placeholderValue} />
-        </FormGroup>)
+                    <Label for={name}>{label}</Label>
+                      <Input onChange={func} type={type} name={name} placeholder={placeholderValue} />
+                  </FormGroup>
+        );
         return form;
-        break;
+        // break;
     
       default:
         break;
@@ -30,10 +27,13 @@ class FormElement extends Component {
   render() {
     let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func, this.props.label);
     return (
-      <FormGroup>
-      <p>hello</p>
-        {output}
-    </FormGroup>
+      <Form onSubmit={this.getInputValues}>
+        <FormGroup>
+        <p>hello</p>
+          {output}
+        </FormGroup>
+      <Button onClick={this.props.subValues} >Submit</Button>
+      </Form>
     );
   }
 }

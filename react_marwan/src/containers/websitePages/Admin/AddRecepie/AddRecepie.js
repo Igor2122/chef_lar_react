@@ -1,19 +1,20 @@
 import React, {Component} from 'react'
 import AddRecepieForm from '../../../../components/UI/Input/forms/AddRecepieForm/AddRecepieForm';
 import {Container, Row, Col} from 'reactstrap';
+import axios from 'axios';
 
 
 class AddRecepies extends Component {
 
   state = {
     formData: {
-      title: null,
-      short_description: null,
-      image: null,
-      directions: null,
-      ingredients: null,
-      category: null,
-      level: null,
+      title: 'One',
+      short_description: 'One',
+      image: 'one',
+      directions: 'one',
+      ingredients: 'one',
+      category: 1,
+      level: 1,
     }, 
     fromSettings: [
       {
@@ -61,6 +62,15 @@ class AddRecepies extends Component {
     console.log(this.state);
   }
 
+  handlePost = e => {
+    console.log('clicked');
+    e.preventDefault();
+    axios.post('http://127.0.0.1:8000/api/recepies', this.state.formData)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+      console.log(this.state.formData, typeof this.state.formData);
+  }
+
   
 
   render() {
@@ -75,6 +85,7 @@ class AddRecepies extends Component {
                           placeholder = {res.recep_name.placeholder}
                           label={res.recep_name.label}
                           func={this.handleChange}
+                          subValues={this.handlePost}
                     />)
     });
     return (

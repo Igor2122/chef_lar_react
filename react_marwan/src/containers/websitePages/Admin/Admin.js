@@ -3,7 +3,7 @@ import Navigation from '../../Navigation/Navigation';
 // eslint-disable-next-line
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Container, Row, Col} from 'reactstrap';
-import AdminNavigation from './AdminNavigation/AdminNavigation';
+// import AdminNavigation from './AdminNavigation/AdminNavigation';
 import AddRecepies from './AddRecepie/AddRecepie';
 
 class AdminPage extends Component {
@@ -20,7 +20,7 @@ class AdminPage extends Component {
           <Row>
             <Col xs='3'>
               <div style={spacer}></div>
-              <AdminNavigation/>
+              {/* <AdminNavigation/> */}
             </Col>
             <Col xs='9'>
               

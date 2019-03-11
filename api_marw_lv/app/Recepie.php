@@ -11,11 +11,11 @@ class Recepie extends Model
     	'title', 
     	'short_description',
     	'categrory_id', 
-    	'imgage',
+    	'image',
     	'directions',
     	'ingredients',
     	'level',
-    ]
+    ];
 
     /**
      * Recepie belongs to Category.
