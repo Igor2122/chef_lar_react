@@ -26,6 +26,13 @@ class FormElement extends Component {
                 </FormGroup>
         );
         break;
+        case 'textarea':
+        form = (<FormGroup>
+                  <Label for={name}>{label}</Label>
+                  <Input type={type} name={name} id={name} />
+                </FormGroup>
+        );
+        break;
 
         
         default:
@@ -37,10 +44,9 @@ class FormElement extends Component {
   render() {
     let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func, this.props.label);
     return (
-      
-        <FormGroup>
-          {output}
-        </FormGroup>
+      <>
+        {output}
+      </>
     );
   }
 }

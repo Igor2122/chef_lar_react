@@ -18,28 +18,36 @@ class AddRecepies extends Component {
     }, 
     fromSettings: [
       {
-        recep_name: {
+        
           label: 'Recepie Name',
           type: 'text',
           name: 'title',
           placeholder: 'Enter Your Recepie Name'
-        },
+        
       },
       {
-        recep_name : {
-        label: 'Short Description',
+        
+        label: 'Category Select',
         type: 'text',
         name: 'short_description',
         placeholder: 'Recepie Short Description'
-      }
+      
      },
      {
-      recep_name : {
+      
       label: 'Short Description',
+      type: 'select',
+      name: 'categories_selection',
+      placeholder: 'Category Select'
+    
+   },
+     {
+      
+      label: 'add_image',
       type: 'text',
-      name: 'short_description',
-      placeholder: 'Recepie Short Description'
-    }
+      name: 'image',
+      placeholder: 'Add your Image'
+    
    },
     ],
       image: 'text',
@@ -91,10 +99,11 @@ class AddRecepies extends Component {
       console.log(result);
        return (
                     <AddRecepieForm 
-                          type={result.recep_name.type} 
-                          name = {result.recep_name.name}
-                          placeholder = {result.recep_name.placeholder}
-                          label={result.recep_name.label}
+                          key={result.name}
+                          type={result.type} 
+                          name = {result.name}
+                          placeholder = {result.placeholder}
+                          label={result.label}
                           func={this.handleChange}
                           subValues={this.handlePost}
                     />
