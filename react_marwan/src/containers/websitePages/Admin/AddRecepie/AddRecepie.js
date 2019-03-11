@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import AddRecepieForm from '../../../../components/UI/Input/forms/AddRecepieForm/AddRecepieForm';
-import {Container, Row, Col} from 'reactstrap';
+import {Container, Row, Col, Form, Button} from 'reactstrap';
 import axios from 'axios';
 
 
@@ -53,7 +53,8 @@ class AddRecepies extends Component {
           this.setState({formData: {...this.state.formData, title: e.target.value}});
         break;
       case 'short_description':
-          this.setState({short_description: e.target.value});
+        console.log(e.target.value);
+        this.setState({formData: {...this.state.formData, short_description: e.target.value}});
         break;
 
       default:
@@ -95,7 +96,10 @@ class AddRecepies extends Component {
           <h1>Add Recipe Form</h1>
         </Col>
         <Col md="8">
+        <Form onSubmit={this.getInputValues}>
           {form}
+          <Button>Submit</Button>
+        </Form>
         </Col>
       </Row>
       </Container>

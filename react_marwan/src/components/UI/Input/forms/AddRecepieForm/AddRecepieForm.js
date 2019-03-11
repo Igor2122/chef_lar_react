@@ -7,7 +7,7 @@ class FormElement extends Component {
 
   
    generateFrom = (type, name, placeholderValue, func, label) => {
-     console.log(this.props);
+    //  console.log(this.props);
      let form = null;
       switch (type) {
         case 'text':
@@ -27,13 +27,11 @@ class FormElement extends Component {
   render() {
     let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func, this.props.label);
     return (
-      <Form onSubmit={this.getInputValues}>
+      
         <FormGroup>
         <p>hello</p>
           {output}
         </FormGroup>
-      <Button onClick={this.props.subValues} >Submit</Button>
-      </Form>
     );
   }
 }
