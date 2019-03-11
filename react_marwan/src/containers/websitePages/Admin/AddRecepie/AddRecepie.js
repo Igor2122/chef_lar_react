@@ -51,16 +51,16 @@ class AddRecepies extends Component {
     
    },
     ],
-    db_categories: {
-
-    }
+    
   }
 
   componentDidMount() {
     fetch_categories()
       .then(category => {
-        console.log(category)
-        this.setState()
+        // console.log(category)
+        this.setState({...this.state, db_categories: category.data});
+        console.log(this.state.db_categories);
+        this.state.db_categories.map(res => console.log(res));
       })
       .then(error => console.log(error));
   }
