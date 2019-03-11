@@ -33,6 +33,14 @@ class AddRecepies extends Component {
         placeholder: 'Recepie Short Description'
       }
      },
+     {
+      recep_name : {
+      label: 'Short Description',
+      type: 'text',
+      name: 'short_description',
+      placeholder: 'Recepie Short Description'
+    }
+   },
     ],
       image: 'text',
       directions: 'textarea',
@@ -67,7 +75,7 @@ class AddRecepies extends Component {
     console.log('clicked');
     e.preventDefault();
     axios.post('http://127.0.0.1:8000/api/recepies', this.state.formData)
-      .then(res => console.log(res))
+      .then(result => console.log(result))
       .catch(err => console.log(err));
       console.log(this.state.formData, typeof this.state.formData);
   }
@@ -79,16 +87,20 @@ class AddRecepies extends Component {
     
     // console.log(this.state.fromSettings);
     let form = null
-    form = this.state.fromSettings.map(res => {
-       return (<AddRecepieForm 
-                          type={res.recep_name.type} 
-                          name = {res.recep_name.name}
-                          placeholder = {res.recep_name.placeholder}
-                          label={res.recep_name.label}
+    form = this.state.fromSettings.map(result => {
+      console.log(result);
+       return (
+                    <AddRecepieForm 
+                          type={result.recep_name.type} 
+                          name = {result.recep_name.name}
+                          placeholder = {result.recep_name.placeholder}
+                          label={result.recep_name.label}
                           func={this.handleChange}
                           subValues={this.handlePost}
-                    />)
+                    />
+                    )
     });
+
     return (
       <Container>
       <Row>

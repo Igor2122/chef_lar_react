@@ -5,6 +5,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {Container, Row, Col} from 'reactstrap';
 // import AdminNavigation from './AdminNavigation/AdminNavigation';
 import AddRecepies from './AddRecepie/AddRecepie';
+import AdminNavigation from '../../../components/UI/admin_nav/AdminNavigation';
 
 class AdminPage extends Component {
 
@@ -20,7 +21,7 @@ class AdminPage extends Component {
           <Row>
             <Col xs='3'>
               <div style={spacer}></div>
-              {/* <AdminNavigation/> */}
+              <AdminNavigation/>
             </Col>
             <Col xs='9'>
               

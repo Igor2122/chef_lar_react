@@ -16,12 +16,22 @@ class FormElement extends Component {
                       <Input onChange={func} type={type} name={name} placeholder={placeholderValue} />
                   </FormGroup>
         );
-        return form;
-        // break;
-    
-      default:
         break;
-    }
+        case 'select':
+        form = (<FormGroup>
+                  <Label for={name}>{label}</Label>
+                  <Input type={type} name={name} id={name}>
+                  <option>1</option>
+                  </Input>
+                </FormGroup>
+        );
+        break;
+
+        
+        default:
+        break;
+      }
+      return form;
   }
 
   render() {
@@ -29,7 +39,6 @@ class FormElement extends Component {
     return (
       
         <FormGroup>
-        <p>hello</p>
           {output}
         </FormGroup>
     );
