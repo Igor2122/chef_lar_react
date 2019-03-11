@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import AddRecepieForm from '../../../../components/UI/Input/forms/AddRecepieForm/AddRecepieForm';
 import {Container, Row, Col, Form, Button} from 'reactstrap';
 import axios from 'axios';
+import fetch_categories from '../../../../axios_recepies/fetch_categories';
 
 
 class AddRecepies extends Component {
@@ -50,11 +51,18 @@ class AddRecepies extends Component {
     
    },
     ],
-      image: 'text',
-      directions: 'textarea',
-      ingredients: 'textarea',
-      category: 'select',
-      level: 'select',
+    db_categories: {
+
+    }
+  }
+
+  componentDidMount() {
+    fetch_categories()
+      .then(category => {
+        console.log(category)
+        this.setState()
+      })
+      .then(error => console.log(error));
   }
 
   getInputValues = e => {
@@ -96,7 +104,7 @@ class AddRecepies extends Component {
     // console.log(this.state.fromSettings);
     let form = null
     form = this.state.fromSettings.map(result => {
-      console.log(result);
+      // console.log(result);
        return (
                     <AddRecepieForm 
                           key={result.name}
