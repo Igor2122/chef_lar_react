@@ -100,7 +100,7 @@ class AddRecepies extends Component {
 
   render() {
   
-    // console.log(this.state.fromSettings);
+    
     let form = null
     form = this.state.fromSettings.map(result => {
       // console.log(result);
