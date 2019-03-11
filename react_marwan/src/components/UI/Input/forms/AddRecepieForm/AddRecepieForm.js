@@ -22,8 +22,10 @@ class FormElement extends Component {
 
           form = (<FormGroup>
                   <Label for={name}>{label}</Label>
-                  <Input type={type} name={name} id={name}>
-                  {categories.map(category => <option key={category.id}>{category.name}</option>)}
+                  <Input onChange={func} type={type} name={name} id={name}>
+                  {categories.map(category => <option 
+                                    key={category.id}
+                                    value={category.id}>{category.name}</option>)}
                   </Input>
                 </FormGroup>
         );

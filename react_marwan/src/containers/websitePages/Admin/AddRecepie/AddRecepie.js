@@ -81,7 +81,6 @@ class AddRecepies extends Component {
     }
 
     handleChange = e => {
-        console.log(e.target.name)
         switch (e.target.name) {
             case 'title':
                 this.setState({
@@ -113,7 +112,7 @@ class AddRecepies extends Component {
             default:
                 break;
         }
-        console.log(this.state);
+        
     }
 
     handlePost = e => {
@@ -128,37 +127,21 @@ class AddRecepies extends Component {
 
 
     render() {
-
+        console.log(this.state);
 
         let form = null
         form = this.state.fromSettings.map(result => {
             // console.log(result);
-            return ( <
-                AddRecepieForm key = {
-                    result.name
-                }
-                type = {
-                    result.type
-                }
-                name = {
-                    result.name
-                }
-                placeholder = {
-                    result.placeholder
-                }
-                label = {
-                    result.label
-                }
-                func = {
-                    this.handleChange
-                }
-                subValues = {
-                    this.handlePost
-                }
-                categories = {
-                    this.state.db_categories
-                }
-                />
+            return ( <AddRecepieForm 
+                  key = {result.name}
+                  type = {result.type}
+                  name = {result.name}
+                  placeholder = {result.placeholder}
+                  label = {result.label}
+                  func = {this.handleChange}
+                  subValues = {this.handlePost}
+                  categories = {this.state.db_categories}
+            />
             )
         });
 
@@ -168,7 +151,7 @@ class AddRecepies extends Component {
               <Col md="4">
                 <h1> Add Recipe Form </h1> 
               </Col> 
-              <Col md = "8" >
+              <Col md="8">
                 <Form onSubmit = {this.getInputValues} > 
                   {form}
                   <Button > Submit </Button> 
