@@ -54,13 +54,13 @@ class AddRecepies extends Component {
     
   }
 
+
+
   componentDidMount() {
     fetch_categories()
       .then(category => {
-        // console.log(category)
         this.setState({...this.state, db_categories: category.data});
         console.log(this.state.db_categories);
-        this.state.db_categories.map(res => console.log(res));
       })
       .then(error => console.log(error));
   }
@@ -100,7 +100,6 @@ class AddRecepies extends Component {
 
   render() {
   
-    
     // console.log(this.state.fromSettings);
     let form = null
     form = this.state.fromSettings.map(result => {
@@ -114,6 +113,7 @@ class AddRecepies extends Component {
                           label={result.label}
                           func={this.handleChange}
                           subValues={this.handlePost}
+                          categories={this.state.db_categories}
                     />
                     )
     });

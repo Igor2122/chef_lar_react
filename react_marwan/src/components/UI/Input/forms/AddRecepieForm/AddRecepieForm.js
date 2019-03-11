@@ -6,7 +6,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class FormElement extends Component {
 
   
-   generateFrom = (type, name, placeholderValue, func, label) => {
+   generateFrom = (type, name, placeholderValue, func, label, categories) => {
     //  console.log(this.props);
      let form = null;
       switch (type) {
@@ -22,6 +22,7 @@ class FormElement extends Component {
                   <Label for={name}>{label}</Label>
                   <Input type={type} name={name} id={name}>
                   <option>1</option>
+                  {categories.map(category => <option>category.name</option>)}
                   </Input>
                 </FormGroup>
         );
@@ -42,7 +43,7 @@ class FormElement extends Component {
   }
 
   render() {
-    let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func, this.props.label);
+    let output = this.generateFrom(this.props.type, this.props.name, this.props.placeholder, this.props.func, this.props.label, this.props.categories);
     return (
       <>
         {output}
