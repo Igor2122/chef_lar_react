@@ -18,14 +18,16 @@ class FormElement extends Component {
         );
         break;
         case 'select':
-        form = (<FormGroup>
+        if(this.props.categories){
+
+          form = (<FormGroup>
                   <Label for={name}>{label}</Label>
                   <Input type={type} name={name} id={name}>
-                  <option>1</option>
-                  {categories.map(category => <option>category.name</option>)}
+                  {categories.map(category => <option key={category.id}>{category.name}</option>)}
                   </Input>
                 </FormGroup>
         );
+      }
         break;
         case 'textarea':
         form = (<FormGroup>
